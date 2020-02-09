@@ -8,10 +8,10 @@ nvidia: Nvidia
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.nvidia](https://galaxy.ansible.com/devops-toolbox.nvidia)
+[https://galaxy.ansible.com/devopstoolbox.nvidia](https://galaxy.ansible.com/devopstoolbox.nvidia)
 
 ```bash
-ansible-galaxy install devops-toolbox.nvidia
+ansible-galaxy install devopstoolbox.nvidia
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: nvidia is configured
       import_role:
-        name: devops-toolbox.nvidia
+        name: devopstoolbox.nvidia
       vars:
         nvidia_packages_state: present
         nvidia_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
