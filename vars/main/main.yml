@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+nvidia_repos_create: "{{ _nvidia_repos_create['all']
+  | union ( _nvidia_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+nvidia_repos_download: "{{ _nvidia_repos_download['all']
+  | union ( _nvidia_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+nvidia_templates_copy: "{{ _nvidia_templates_copy['all']
+  | union ( _nvidia_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+nvidia_services_enable: "{{ _nvidia_services_enable['all']
+  | union ( _nvidia_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+nvidia_selinux_enable: "{{ _nvidia_selinux_enable['all']
+  | union ( _nvidia_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+nvidia_packages_remove: "{{ _nvidia_packages_remove['all']
+  | union ( _nvidia_packages_remove[my_os]
+  | default([]) ) }}"
+nvidia_packages_repos: "{{ _nvidia_packages_repos['all']
+  | union ( _nvidia_packages_repos[my_os]
+  | default([]) ) }}"
+nvidia_packages_prereq: "{{ _nvidia_packages_prereq['all']
+  | union ( _nvidia_packages_prereq[my_os]
+  | default([]) ) }}"
+nvidia_packages_install: "{{ _nvidia_packages_install['all']
+  | union ( _nvidia_packages_install[my_os]
+  | default([]) ) }}"

@@ -1,0 +1,11 @@
+---
+# Configure nvidia
+
+- name: service is enabled and started
+  service:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  become: true
+  loop: "{{ nvidia_services_enable }}"
+  when: nvidia_enable_service

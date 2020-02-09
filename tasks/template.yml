@@ -1,0 +1,10 @@
+---
+# Template configuration files for nvidia
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ nvidia_templates_copy }}"
+  when: nvidia_copy_templates
